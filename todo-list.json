@@ -1,6 +1,22 @@
 [
     {
-        "struttura dati": "quiiii",
-        "array di": "oggetti"
+        "task": "Fare la spesa",
+        "status": "undone"
+    },
+    {
+        "task": "Portare fuori il cane",
+        "status": "undone"
+    },
+    {
+        "task": "Pulire casa",
+        "status": "done"
+    },
+    {
+        "task": "Chiamare ufficio",
+        "status": "undone"
+    },
+    {
+        "task": "Controllare mail",
+        "status": "done"
     }
 ]
