@@ -50,13 +50,17 @@
         <!-- input      METTI ACTION FORM -->
         <div class="row justify-content-center">
             <div class="col-6 mt-4">
-                <form action="" method="post">
+                <!-- <form @submit.prevent="inputTask">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Inserisci un elemento..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <input v-model="newTask.task" type="text" class="form-control" placeholder="Inserisci un elemento..." aria-label="Recipient's username" aria-describedby="button-addon2">
                         <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Inserisci</button>
                     </div>
-                </form>
-
+                </form> -->
+                <div class="input-group mb-3">
+                    <input @keyup.enter="inputTask" v-model="newTask.task" type="text" class="form-control" placeholder="Inserisci un elemento..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                    <button @click="inputTask" class="btn btn-outline-secondary" type="submit" id="button-addon2">Inserisci</button>
+                </div>
+                
             </div>
         </div>
     </div>

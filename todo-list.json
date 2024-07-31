@@ -18,5 +18,9 @@
     {
         "task": "Controllare mail",
         "status": "done"
+    },
+    {
+        "task": "buttare spazzatura",
+        "status": "undone"
     }
 ]

@@ -8,7 +8,18 @@ $string = file_get_contents('todo-list.json');
 $list = json_decode($string);
 
 
-//logica per modificare json  
+//logica per modificare json
+
+// se arriva elemento post aggiorno json
+if(isset($_POST['newTask'])) {
+    $newTask = $_POST['newTask'];
+
+    // pusho elemento in lista
+    $list[] = $newTask;
+
+    // sovrascrivo json con lista aggiornata
+    file_put_contents('todo-list.json', json_encode($list));
+}  
 
 // header('Content-Type: application/json');
 
