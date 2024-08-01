@@ -39,14 +39,33 @@ createApp({
                 headers: { 'Content-Type': 'multipart/form-data' }
             })
                 .then(response => {
-                    console.log(response.data);
+                    // console.log(response.data);
                     this.list = response.data;
                 }
                 )
 
         },
 
+        // funzione per cambio status
+        changeStatus(index) {
 
+            // variabili per passaggio dati in php
+            let newStatus = this.list[index].status === 'done' ? 'undone' : 'done';
+            let data = {
+                indexStatus: index,
+                status: newStatus
+            }
+            // chiamta api
+            axios.post(this.apiUrl, data, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            })
+                .then(response => {
+                    // cambio status
+                    this.list[index].status = newStatus;
+                    console.log(response.data);
+                }
+                )
+        }
     },
 
     mounted() {
