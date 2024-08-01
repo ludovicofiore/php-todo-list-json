@@ -40,7 +40,7 @@
                 <ul class="list-group">
                     <li class="list-group-item d-flex justify-content-between align-items-center" v-for="(singleTask, index) in list" :key="index" :class="singleTask.status === 'done' ? 'text-decoration-line-through' : ''" @click="changeStatus(index)">
                         {{singleTask.task}}
-                        <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                        <button @click="removeTask(index)" v-if="singleTask.status === 'done'" type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                     </li>
                     
                 </ul>

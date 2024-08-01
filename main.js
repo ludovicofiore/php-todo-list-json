@@ -62,7 +62,25 @@ createApp({
                 .then(response => {
                     // cambio status
                     this.list[index].status = newStatus;
+                    // console.log(response.data);
+                }
+                )
+        },
+
+
+        // funzione per eliminare task
+        removeTask(index) {
+            const data = {
+                taskToDelete: index,
+            }
+
+            axios.post(this.apiUrl, data, {
+                headers: { 'Content-Type': 'multipart/form-data' }
+            })
+                .then(response => {
                     console.log(response.data);
+                    this.list = response.data;
+                    // this.list.splice(index, 1);
                 }
                 )
         }

@@ -35,6 +35,18 @@ if(isset($_POST['indexStatus']) && isset($_POST['status'])) {
     file_put_contents('todo-list.json', json_encode($list));
 }
 
+
+if(isset($_POST['taskToDelete'])) {
+    $index = $_POST['taskToDelete'];
+
+    // array_slice($list, $index, 1);
+    unset($list[$index]);
+    // $list = array_values($list);
+
+    file_put_contents('todo-list.json', json_encode($list));
+}
+
+
 // header('Content-Type: application/json');
 
 // trasformo oggetto modificabile in json
