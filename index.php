@@ -38,7 +38,7 @@
         <div class="row justify-content-center">
             <div class="col-6 mt-5">
                 <ul class="list-group">
-                    <li class="list-group-item d-flex justify-content-between align-items-center" v-for="(singleTask, index) in list" :key="index">
+                    <li class="list-group-item d-flex justify-content-between align-items-center" v-for="(singleTask, index) in list" :key="index" :class="singleTask.status === 'done' ? 'text-decoration-line-through' : ''">
                         {{singleTask.task}}
                         <button type="button" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
                     </li>
@@ -47,7 +47,7 @@
             </div>
         </div>
 
-        <!-- input      METTI ACTION FORM -->
+        <!-- input -->
         <div class="row justify-content-center">
             <div class="col-6 mt-4">
                 <!-- <form @submit.prevent="inputTask">

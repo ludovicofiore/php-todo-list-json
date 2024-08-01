@@ -12,7 +12,8 @@ createApp({
             newTask: {
                 task: '',
                 status: 'undone'
-            }
+            },
+
         }
     },
 
@@ -24,6 +25,7 @@ createApp({
                     this.list = response.data;
                 }
                 )
+
         },
 
         // aggiungere nuova task da input
@@ -42,7 +44,9 @@ createApp({
                 }
                 )
 
-        }
+        },
+
+
     },
 
     mounted() {
